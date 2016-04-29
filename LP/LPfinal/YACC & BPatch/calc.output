@@ -1,0 +1,116 @@
+Grammar
+
+    0 $accept: S $end
+
+    1 S: E '\n'
+
+    2 E: E '+' E
+    3  | E '*' E
+    4  | num
+
+
+Terminals, with rules where they appear
+
+$end (0) 0
+'\n' (10) 1
+'*' (42) 3
+'+' (43) 2
+error (256)
+num (258) 4
+
+
+Nonterminals, with rules where they appear
+
+$accept (7)
+    on left: 0
+S (8)
+    on left: 1, on right: 0
+E (9)
+    on left: 2 3 4, on right: 1 2 3
+
+
+State 0
+
+    0 $accept: . S $end
+
+    num  shift, and go to state 1
+
+    S  go to state 2
+    E  go to state 3
+
+
+State 1
+
+    4 E: num .
+
+    $default  reduce using rule 4 (E)
+
+
+State 2
+
+    0 $accept: S . $end
+
+    $end  shift, and go to state 4
+
+
+State 3
+
+    1 S: E . '\n'
+    2 E: E . '+' E
+    3  | E . '*' E
+
+    '+'   shift, and go to state 5
+    '*'   shift, and go to state 6
+    '\n'  shift, and go to state 7
+
+
+State 4
+
+    0 $accept: S $end .
+
+    $default  accept
+
+
+State 5
+
+    2 E: E '+' . E
+
+    num  shift, and go to state 1
+
+    E  go to state 8
+
+
+State 6
+
+    3 E: E '*' . E
+
+    num  shift, and go to state 1
+
+    E  go to state 9
+
+
+State 7
+
+    1 S: E '\n' .
+
+    $default  reduce using rule 1 (S)
+
+
+State 8
+
+    2 E: E . '+' E
+    2  | E '+' E .
+    3  | E . '*' E
+
+    '*'  shift, and go to state 6
+
+    $default  reduce using rule 2 (E)
+
+
+State 9
+
+    2 E: E . '+' E
+    3  | E . '*' E
+    3  | E '*' E .
+
+    $default  reduce using rule 3 (E)

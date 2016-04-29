@@ -1,0 +1,5 @@
+3
+S 1 CD
+C 1 cD
+D 1 c
+ccc

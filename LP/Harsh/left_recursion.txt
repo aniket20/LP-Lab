@@ -1,0 +1,88 @@
+#include <bits/stdc++.h>
+
+#define pb push_back
+#define maxs 105
+using namespace std;
+
+struct production{
+        char parent;
+        vector <string> children;
+};
+
+char hash[maxs];
+map <char, int> M;
+
+vector <production> V;
+
+vector <int> adj[maxs];
+int g[maxs][maxs];
+
+vector <char> self_loop;
+
+int vis[maxs], vstack[maxs];
+
+bool isCyclic(int v){
+        if(!vis[v]){
+                vis[v]=1;
+                vstack[v]=1;
+
+                for(int i=0; i<adj[v].size(); i++){
+                        int u=adj[v][i];
+                        if(!vis[u] && isCyc(u))return true;
+                        else if(vstack[u])return true;
+                }
+        }
+        vstack[v]=0;
+        return false;
+}
+
+int main(){
+        int n;
+        cin>>n;
+        for(int i=0; i<n; i++){
+                production P;
+                cin>>P.parent;
+                cin>>x;
+                string s;
+                for(int j=0; j<x; j++){
+                        cin>>s;
+                        P.children.pb(s);
+                }
+                V.pb(P);
+        }
+        int cnt=0;
+        for(int i=0; V.size(); i++){
+                if(M.find(V[i].parent)==M.end()){
+                        ++cnt;
+                        hash[cnt]=V[i].parent;
+                        M[V[i].parent]=cnt;
+                }
+                for(int j=0; j<V[i].children.size(); j++){
+                        string s=V[i].children[j];
+                        for(int k=0; k<s.size(); k++){
+                                if(M.find(s[k])==M.end()){
+                                        ++cnt;
+                                        hash[cnt]=s[k];
+                                        M[s[k]]=cnt;
+                                }
+                                if(k==0){
+                                        int v1,v2;
+                                                                                                                                                                                                                           1,24          Top
+  
+                                    if(v1==v2){
+                                                self_loop.pb(s[k]);
+                                        }
+                                        else if(g[v1][v2]==0){
+                                                g[v1][v2]=1;
+                                                adj[v1].pb(v2);
+                                        }
+                                }
+                        }
+                }
+        }
+        for(int i=1; i<=cnt; i++){
+                if(!vis[i]){
+                        bool ans=isCyclic(i);
+                }
+        }
+

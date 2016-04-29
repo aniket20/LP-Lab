@@ -1,0 +1,6 @@
+3
+S 1 AA
+A 1 aA
+A 1 y
+
+aayy

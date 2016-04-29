@@ -1,0 +1,37 @@
+The First is as follows: 
+calculating first of: A
+A --> y a 
+calculating first of: S
+case 3
+calculating first of: A
+S --> a y 
+
+
+
+
+
+
+
+
+---------
+n val g/a
+---------
+0 A - 1
+0 S - 2
+0 a - s3
+0 y - s4
+1 A - 5
+1 a - s3
+1 y - s4
+3 A - 6
+3 a - s3
+3 y - s4
+4 $ - r3
+4 a - r3
+4 y - r3
+5 $ - r1
+6 $ - r2
+6 a - r2
+6 y - r2
+---------
+ACCEPTED.

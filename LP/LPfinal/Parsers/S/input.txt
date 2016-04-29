@@ -1,0 +1,15 @@
+6
+E 1 E+T
+E 1 T
+T 1 T*F
+T 1 F
+F 1 (E)
+F 1 i
+
+i+i*i
+
+a*a+a*a
+3
+E 1 E+E
+E 1 E*E
+E 1 a

@@ -1,0 +1,8 @@
+5
+S 1 CC
+C 1 cD
+C 1 c
+D 1 dC
+D 1 d
+cdcdc
+

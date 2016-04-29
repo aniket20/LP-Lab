@@ -1,0 +1,9 @@
+//yacc compile
+yacc -d file.y
+lex file.l
+g++ y.tab.c lex.yy.c any_other_cpp_files -ll
+
+
+//lex compile
+lex file.l
+g++ lex.yy.c cppfile.cpp

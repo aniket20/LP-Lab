@@ -1,0 +1,119 @@
+#include <bits/stdc++.h>
+#define pb push_back
+using namespace std;
+
+struct production{
+        char parent;
+        vector <string> children;
+};
+
+vector <production> V;
+vector <production> E;
+
+map <string, int>::iterator it;
+map <string, int> last;
+
+int C=25;
+
+int findPrefix(int idx){
+        int ans=0;
+        for(int i=1; ;i++){
+                map <string, int> M;
+
+                for(int j=0; j<V[idx].children.size(); j++){
+                        string s=V[idx].children[j];
+                        if(s.size()>=i){
+                                string temp=s.substr(0, i);
+                                M[temp]++;
+                        }
+                }
+
+                int c=0;
+                for(it=M.begin(); it!=M.end(); it++){
+                        if(it->second>1)c++;
+                }
+                if(c==0)break;
+                last=M;
+                ans=i;
+        }
+        return ans;
+}
+
+
+void fun(int idx, string s){
+//      cout<<idx<<" "<<s<<endl;
+        vector <string> v=V[idx].children;
+        vector <string> suffix;
+        for(int i=0; i<v.size(); i++){
+                if(v[i].size()<s.size())continue;
+                string temp=v[i].substr(0, s.size());
+                if(temp==s){
+                        string sff;
+                        if(v[i].size()>s.size())
+                                sff=v[i].substr(s.size(), v[i].size()-s.size());
+                        else sff="~";
+        //                      cout<<v[i]<<" "<<sff<<endl;
+                        suffix.pb(sff);
+                        v.erase(v.begin()+i);
+                        i--;
+                }
+        }
+        V[idx].children=v;
+        string newc="";
+        newc+=s;
+        newc+=(C+'A');
+        production T;
+        T.parent=(C+'A');
+        T.children=suffix;
+        E.pb(T);
+        C--;
+        V[idx].children.pb(newc);
+}
+
+void process(int idx, int len){
+        for(it=last.begin(); it!=last.end(); it++){
+                if(it->first.size()==len && it->second>1){
+                        fun(idx, it->first);
+                }
+        }
+}
+
+int main(){
+        int n,x;
+        cin>>n;
+        for(int i=0; i<n; i++){
+                production P;
+                cin>>P.parent;
+                cin>>x;
+                string s;
+                for(int j=0; j<x; j++){
+                        cin>>s;
+                        P.children.pb(s);
+                }
+                V.pb(P);
+        }
+        for(int i=0; i<V.size(); i++){
+                while(true){
+                        int len=findPrefix(i);
+                        //cout<<i<<" "<<len<<endl;
+                        if(len==0)break;
+                        process(i, len);
+                }
+        }
+
+        for(int i=0; i<V.size(); i++){
+                cout<<V[i].parent<<endl;
+                for(int j=0; j<V[i].children.size(); j++){
+                        cout<<V[i].children[j]<<" ";
+                }
+                cout<<endl;
+        }
+        for(int i=0; i<E.size(); i++){
+                cout<<E[i].parent<<endl;
+                for(int j=0; j<E[i].children.size(); j++){
+                        cout<<E[i].children[j]<<" ";
+                }
+                cout<<endl;
+        }
+}
+                                                                                                                                                                                                                           118,1         Bot

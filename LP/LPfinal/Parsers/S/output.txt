@@ -1,0 +1,745 @@
+E -> E+T | 
+E -> T | 
+T -> T*F | 
+T -> F | 
+F -> (E) | 
+F -> i | 
+Displaying augmentd grammar
+Y -> E | 
+E -> E+T | 
+E -> T | 
+T -> T*F | 
+T -> F | 
+F -> (E) | 
+F -> i | 
+All symbols
+( ) * + E F T i 
+state 0 closure grammr
+Y -> .E | 
+E -> .E+T | 
+E -> .T | 
+T -> .T*F | 
+T -> .F | 
+F -> .(E) | 
+F -> .i | 
+goTo: 0 , (
+advance dot: str .(E)
+advance dot: ret (.E)
+found: (.E)
+F -> (.E) | 
+displaying goto grammar: 
+F -> (.E) | 
+E -> .E+T | 
+E -> .T | 
+T -> .T*F | 
+T -> .F | 
+F -> .(E) | 
+F -> .i | 
+goTo: 0 , )
+displaying goto grammar: 
+goTo: 0 , *
+displaying goto grammar: 
+goTo: 0 , +
+displaying goto grammar: 
+goTo: 0 , E
+advance dot: str .E
+advance dot: ret E.
+found: E.
+advance dot: str .E+T
+advance dot: ret E.+T
+found: E.+T
+Y -> E. | 
+E -> E.+T | 
+displaying goto grammar: 
+Y -> E. | 
+E -> E.+T | 
+goTo: 0 , F
+advance dot: str .F
+advance dot: ret F.
+found: F.
+T -> F. | 
+displaying goto grammar: 
+T -> F. | 
+goTo: 0 , T
+advance dot: str .T
+advance dot: ret T.
+found: T.
+advance dot: str .T*F
+advance dot: ret T.*F
+found: T.*F
+E -> T. | 
+T -> T.*F | 
+displaying goto grammar: 
+E -> T. | 
+T -> T.*F | 
+goTo: 0 , i
+advance dot: str .i
+advance dot: ret i.
+found: i.
+F -> i. | 
+displaying goto grammar: 
+F -> i. | 
+goTo: 1 , (
+advance dot: str .(E)
+advance dot: ret (.E)
+found: (.E)
+F -> (.E) | 
+displaying goto grammar: 
+F -> (.E) | 
+E -> .E+T | 
+E -> .T | 
+T -> .T*F | 
+T -> .F | 
+F -> .(E) | 
+F -> .i | 
+goTo: 1 , )
+displaying goto grammar: 
+goTo: 1 , *
+displaying goto grammar: 
+goTo: 1 , +
+displaying goto grammar: 
+goTo: 1 , E
+advance dot: str (.E)
+advance dot: ret (E.)
+found: (E.)
+advance dot: str .E+T
+advance dot: ret E.+T
+found: E.+T
+F -> (E.) | 
+E -> E.+T | 
+displaying goto grammar: 
+F -> (E.) | 
+E -> E.+T | 
+goTo: 1 , F
+advance dot: str .F
+advance dot: ret F.
+found: F.
+T -> F. | 
+displaying goto grammar: 
+T -> F. | 
+goTo: 1 , T
+advance dot: str .T
+advance dot: ret T.
+found: T.
+advance dot: str .T*F
+advance dot: ret T.*F
+found: T.*F
+E -> T. | 
+T -> T.*F | 
+displaying goto grammar: 
+E -> T. | 
+T -> T.*F | 
+goTo: 1 , i
+advance dot: str .i
+advance dot: ret i.
+found: i.
+F -> i. | 
+displaying goto grammar: 
+F -> i. | 
+goTo: 2 , (
+displaying goto grammar: 
+goTo: 2 , )
+displaying goto grammar: 
+goTo: 2 , *
+displaying goto grammar: 
+goTo: 2 , +
+advance dot: str E.+T
+advance dot: ret E+.T
+found: E+.T
+E -> E+.T | 
+displaying goto grammar: 
+E -> E+.T | 
+T -> .T*F | 
+T -> .F | 
+F -> .(E) | 
+F -> .i | 
+goTo: 2 , E
+displaying goto grammar: 
+goTo: 2 , F
+displaying goto grammar: 
+goTo: 2 , T
+displaying goto grammar: 
+goTo: 2 , i
+displaying goto grammar: 
+goTo: 3 , (
+displaying goto grammar: 
+goTo: 3 , )
+displaying goto grammar: 
+goTo: 3 , *
+displaying goto grammar: 
+goTo: 3 , +
+displaying goto grammar: 
+goTo: 3 , E
+displaying goto grammar: 
+goTo: 3 , F
+displaying goto grammar: 
+goTo: 3 , T
+displaying goto grammar: 
+goTo: 3 , i
+displaying goto grammar: 
+goTo: 4 , (
+displaying goto grammar: 
+goTo: 4 , )
+displaying goto grammar: 
+goTo: 4 , *
+advance dot: str T.*F
+advance dot: ret T*.F
+found: T*.F
+T -> T*.F | 
+displaying goto grammar: 
+T -> T*.F | 
+F -> .(E) | 
+F -> .i | 
+goTo: 4 , +
+displaying goto grammar: 
+goTo: 4 , E
+displaying goto grammar: 
+goTo: 4 , F
+displaying goto grammar: 
+goTo: 4 , T
+displaying goto grammar: 
+goTo: 4 , i
+displaying goto grammar: 
+goTo: 5 , (
+displaying goto grammar: 
+goTo: 5 , )
+displaying goto grammar: 
+goTo: 5 , *
+displaying goto grammar: 
+goTo: 5 , +
+displaying goto grammar: 
+goTo: 5 , E
+displaying goto grammar: 
+goTo: 5 , F
+displaying goto grammar: 
+goTo: 5 , T
+displaying goto grammar: 
+goTo: 5 , i
+displaying goto grammar: 
+goTo: 6 , (
+displaying goto grammar: 
+goTo: 6 , )
+advance dot: str (E.)
+advance dot: ret (E).
+found: (E).
+F -> (E). | 
+displaying goto grammar: 
+F -> (E). | 
+goTo: 6 , *
+displaying goto grammar: 
+goTo: 6 , +
+advance dot: str E.+T
+advance dot: ret E+.T
+found: E+.T
+E -> E+.T | 
+displaying goto grammar: 
+E -> E+.T | 
+T -> .T*F | 
+T -> .F | 
+F -> .(E) | 
+F -> .i | 
+goTo: 6 , E
+displaying goto grammar: 
+goTo: 6 , F
+displaying goto grammar: 
+goTo: 6 , T
+displaying goto grammar: 
+goTo: 6 , i
+displaying goto grammar: 
+goTo: 3 , (
+displaying goto grammar: 
+goTo: 3 , )
+displaying goto grammar: 
+goTo: 3 , *
+displaying goto grammar: 
+goTo: 3 , +
+displaying goto grammar: 
+goTo: 3 , E
+displaying goto grammar: 
+goTo: 3 , F
+displaying goto grammar: 
+goTo: 3 , T
+displaying goto grammar: 
+goTo: 3 , i
+displaying goto grammar: 
+goTo: 4 , (
+displaying goto grammar: 
+goTo: 4 , )
+displaying goto grammar: 
+goTo: 4 , *
+advance dot: str T.*F
+advance dot: ret T*.F
+found: T*.F
+T -> T*.F | 
+displaying goto grammar: 
+T -> T*.F | 
+F -> .(E) | 
+F -> .i | 
+goTo: 4 , +
+displaying goto grammar: 
+goTo: 4 , E
+displaying goto grammar: 
+goTo: 4 , F
+displaying goto grammar: 
+goTo: 4 , T
+displaying goto grammar: 
+goTo: 4 , i
+displaying goto grammar: 
+goTo: 5 , (
+displaying goto grammar: 
+goTo: 5 , )
+displaying goto grammar: 
+goTo: 5 , *
+displaying goto grammar: 
+goTo: 5 , +
+displaying goto grammar: 
+goTo: 5 , E
+displaying goto grammar: 
+goTo: 5 , F
+displaying goto grammar: 
+goTo: 5 , T
+displaying goto grammar: 
+goTo: 5 , i
+displaying goto grammar: 
+goTo: 7 , (
+advance dot: str .(E)
+advance dot: ret (.E)
+found: (.E)
+F -> (.E) | 
+displaying goto grammar: 
+F -> (.E) | 
+E -> .E+T | 
+E -> .T | 
+T -> .T*F | 
+T -> .F | 
+F -> .(E) | 
+F -> .i | 
+goTo: 7 , )
+displaying goto grammar: 
+goTo: 7 , *
+displaying goto grammar: 
+goTo: 7 , +
+displaying goto grammar: 
+goTo: 7 , E
+displaying goto grammar: 
+goTo: 7 , F
+advance dot: str .F
+advance dot: ret F.
+found: F.
+T -> F. | 
+displaying goto grammar: 
+T -> F. | 
+goTo: 7 , T
+advance dot: str E+.T
+advance dot: ret E+T.
+found: E+T.
+advance dot: str .T*F
+advance dot: ret T.*F
+found: T.*F
+E -> E+T. | 
+T -> T.*F | 
+displaying goto grammar: 
+E -> E+T. | 
+T -> T.*F | 
+goTo: 7 , i
+advance dot: str .i
+advance dot: ret i.
+found: i.
+F -> i. | 
+displaying goto grammar: 
+F -> i. | 
+goTo: 8 , (
+advance dot: str .(E)
+advance dot: ret (.E)
+found: (.E)
+F -> (.E) | 
+displaying goto grammar: 
+F -> (.E) | 
+E -> .E+T | 
+E -> .T | 
+T -> .T*F | 
+T -> .F | 
+F -> .(E) | 
+F -> .i | 
+goTo: 8 , )
+displaying goto grammar: 
+goTo: 8 , *
+displaying goto grammar: 
+goTo: 8 , +
+displaying goto grammar: 
+goTo: 8 , E
+displaying goto grammar: 
+goTo: 8 , F
+advance dot: str T*.F
+advance dot: ret T*F.
+found: T*F.
+T -> T*F. | 
+displaying goto grammar: 
+T -> T*F. | 
+goTo: 8 , T
+displaying goto grammar: 
+goTo: 8 , i
+advance dot: str .i
+advance dot: ret i.
+found: i.
+F -> i. | 
+displaying goto grammar: 
+F -> i. | 
+goTo: 9 , (
+displaying goto grammar: 
+goTo: 9 , )
+displaying goto grammar: 
+goTo: 9 , *
+displaying goto grammar: 
+goTo: 9 , +
+displaying goto grammar: 
+goTo: 9 , E
+displaying goto grammar: 
+goTo: 9 , F
+displaying goto grammar: 
+goTo: 9 , T
+displaying goto grammar: 
+goTo: 9 , i
+displaying goto grammar: 
+goTo: 7 , (
+advance dot: str .(E)
+advance dot: ret (.E)
+found: (.E)
+F -> (.E) | 
+displaying goto grammar: 
+F -> (.E) | 
+E -> .E+T | 
+E -> .T | 
+T -> .T*F | 
+T -> .F | 
+F -> .(E) | 
+F -> .i | 
+goTo: 7 , )
+displaying goto grammar: 
+goTo: 7 , *
+displaying goto grammar: 
+goTo: 7 , +
+displaying goto grammar: 
+goTo: 7 , E
+displaying goto grammar: 
+goTo: 7 , F
+advance dot: str .F
+advance dot: ret F.
+found: F.
+T -> F. | 
+displaying goto grammar: 
+T -> F. | 
+goTo: 7 , T
+advance dot: str E+.T
+advance dot: ret E+T.
+found: E+T.
+advance dot: str .T*F
+advance dot: ret T.*F
+found: T.*F
+E -> E+T. | 
+T -> T.*F | 
+displaying goto grammar: 
+E -> E+T. | 
+T -> T.*F | 
+goTo: 7 , i
+advance dot: str .i
+advance dot: ret i.
+found: i.
+F -> i. | 
+displaying goto grammar: 
+F -> i. | 
+goTo: 8 , (
+advance dot: str .(E)
+advance dot: ret (.E)
+found: (.E)
+F -> (.E) | 
+displaying goto grammar: 
+F -> (.E) | 
+E -> .E+T | 
+E -> .T | 
+T -> .T*F | 
+T -> .F | 
+F -> .(E) | 
+F -> .i | 
+goTo: 8 , )
+displaying goto grammar: 
+goTo: 8 , *
+displaying goto grammar: 
+goTo: 8 , +
+displaying goto grammar: 
+goTo: 8 , E
+displaying goto grammar: 
+goTo: 8 , F
+advance dot: str T*.F
+advance dot: ret T*F.
+found: T*F.
+T -> T*F. | 
+displaying goto grammar: 
+T -> T*F. | 
+goTo: 8 , T
+displaying goto grammar: 
+goTo: 8 , i
+advance dot: str .i
+advance dot: ret i.
+found: i.
+F -> i. | 
+displaying goto grammar: 
+F -> i. | 
+goTo: 10 , (
+displaying goto grammar: 
+goTo: 10 , )
+displaying goto grammar: 
+goTo: 10 , *
+advance dot: str T.*F
+advance dot: ret T*.F
+found: T*.F
+T -> T*.F | 
+displaying goto grammar: 
+T -> T*.F | 
+F -> .(E) | 
+F -> .i | 
+goTo: 10 , +
+displaying goto grammar: 
+goTo: 10 , E
+displaying goto grammar: 
+goTo: 10 , F
+displaying goto grammar: 
+goTo: 10 , T
+displaying goto grammar: 
+goTo: 10 , i
+displaying goto grammar: 
+goTo: 11 , (
+displaying goto grammar: 
+goTo: 11 , )
+displaying goto grammar: 
+goTo: 11 , *
+displaying goto grammar: 
+goTo: 11 , +
+displaying goto grammar: 
+goTo: 11 , E
+displaying goto grammar: 
+goTo: 11 , F
+displaying goto grammar: 
+goTo: 11 , T
+displaying goto grammar: 
+goTo: 11 , i
+displaying goto grammar: 
+goTo: 10 , (
+displaying goto grammar: 
+goTo: 10 , )
+displaying goto grammar: 
+goTo: 10 , *
+advance dot: str T.*F
+advance dot: ret T*.F
+found: T*.F
+T -> T*.F | 
+displaying goto grammar: 
+T -> T*.F | 
+F -> .(E) | 
+F -> .i | 
+goTo: 10 , +
+displaying goto grammar: 
+goTo: 10 , E
+displaying goto grammar: 
+goTo: 10 , F
+displaying goto grammar: 
+goTo: 10 , T
+displaying goto grammar: 
+goTo: 10 , i
+displaying goto grammar: 
+goTo: 11 , (
+displaying goto grammar: 
+goTo: 11 , )
+displaying goto grammar: 
+goTo: 11 , *
+displaying goto grammar: 
+goTo: 11 , +
+displaying goto grammar: 
+goTo: 11 , E
+displaying goto grammar: 
+goTo: 11 , F
+displaying goto grammar: 
+goTo: 11 , T
+displaying goto grammar: 
+goTo: 11 , i
+displaying goto grammar: 
+Displaying the LR state Automation: 
+state: 0
+Y -> .E | 
+E -> .E+T | 
+E -> .T | 
+T -> .T*F | 
+T -> .F | 
+F -> .(E) | 
+F -> .i | 
+Goto: ( ==> 1
+Goto: E ==> 2
+Goto: F ==> 3
+Goto: T ==> 4
+Goto: i ==> 5
+state: 1
+F -> (.E) | 
+E -> .E+T | 
+E -> .T | 
+T -> .T*F | 
+T -> .F | 
+F -> .(E) | 
+F -> .i | 
+Goto: ( ==> 1
+Goto: E ==> 6
+Goto: F ==> 3
+Goto: T ==> 4
+Goto: i ==> 5
+state: 2
+Y -> E. | 
+E -> E.+T | 
+Goto: + ==> 7
+state: 3
+T -> F. | 
+state: 4
+E -> T. | 
+T -> T.*F | 
+Goto: * ==> 8
+Goto: * ==> 8
+state: 5
+F -> i. | 
+state: 6
+F -> (E.) | 
+E -> E.+T | 
+Goto: ) ==> 9
+Goto: + ==> 7
+state: 7
+E -> E+.T | 
+T -> .T*F | 
+T -> .F | 
+F -> .(E) | 
+F -> .i | 
+Goto: ( ==> 1
+Goto: F ==> 3
+Goto: T ==> 10
+Goto: i ==> 5
+Goto: ( ==> 1
+Goto: F ==> 3
+Goto: T ==> 10
+Goto: i ==> 5
+state: 8
+T -> T*.F | 
+F -> .(E) | 
+F -> .i | 
+Goto: ( ==> 1
+Goto: F ==> 11
+Goto: i ==> 5
+Goto: ( ==> 1
+Goto: F ==> 11
+Goto: i ==> 5
+state: 9
+F -> (E). | 
+state: 10
+E -> E+T. | 
+T -> T.*F | 
+Goto: * ==> 8
+Goto: * ==> 8
+state: 11
+T -> T*F. | 
+The Fiest is as follows: 
+calculating first of: E
+case 3
+calculating first of: T
+case 3
+calculating first of: F
+E --> i 
+E --> i 
+T --> i 
+T --> i 
+F --> i 
+F --> i 
+alpha :  B: E beata: +T
+Calculating follow of NT: E
+
+fOLLOW BETA: +T size: 1
++  
+alpha : E B: + beata: T
+alpha : E+ B: T beata: 
+Calculating follow of NT: T
+ Rule 3 adding folow of E in follow of T
+E --> + 
+alpha :  B: T beata: 
+Calculating follow of NT: T
+ Rule 3 adding folow of E in follow of T
+E --> + 
+alpha :  B: T beata: *F
+Calculating follow of NT: T
+
+fOLLOW BETA: *F size: 1
+*  
+alpha : T B: * beata: F
+alpha : T* B: F beata: 
+Calculating follow of NT: F
+ Rule 3 adding folow of T in follow of F
+T --> * 
+alpha :  B: F beata: 
+Calculating follow of NT: F
+ Rule 3 adding folow of T in follow of F
+T --> * 
+alpha :  B: ( beata: E)
+alpha : ( B: E beata: )
+Calculating follow of NT: E
+
+fOLLOW BETA: ) size: 1
+)  
+alpha : (E B: ) beata: 
+F --> 
+alpha :  B: i beata: 
+F --> 
+contains of map  
+E --> 
+E --> 
+T --> E E 
+T --> E E 
+F --> T T 
+F --> T T 
+
+
+The Follow is as follows: 
+E --> ) + 
+E --> ) + 
+T --> ) * + 
+T --> ) * + 
+F --> ) * + 
+F --> ) * + 
+
+The SLR-table for the graamar is: 
+0 [(,s1]  [E,2]  [F,3]  [T,4]  [i,s5]  
+1 [(,s1]  [E,6]  [F,3]  [T,4]  [i,s5]  
+2 [+,s7]  
+3 [),r4]  [*,r4]  [+,r4]  
+4 [*,s8]  [*,s8]  [),r2]  [+,r2]  
+5 [),r6]  [*,r6]  [+,r6]  
+6 [),s9]  [+,s7]  
+7 [(,s1]  [F,3]  [T,10]  [i,s5]  [(,s1]  [F,3]  [T,10]  [i,s5]  
+8 [(,s1]  [F,11]  [i,s5]  [(,s1]  [F,11]  [i,s5]  
+9 [),r5]  [*,r5]  [+,r5]  
+10 [*,s8]  [*,s8]  [),r1]  [+,r1]  
+11 [),r3]  [*,r3]  [+,r3]  
+string to check: i+i*i
+s
+5 i 0  ===> +i*i
+r
+3 F 0  ===> +i*i
+r
+4 T 0  ===> +i*i
+r
+2 E 0  ===> +i*i
+s
+7 + 2 E 0  ===> i*i
+s
+5 i 7 + 2 E 0  ===> *i
+r
+3 F 7 + 2 E 0  ===> *i
+r
+10 T 7 + 2 E 0  ===> *i
+s
+8 * 10 T 7 + 2 E 0  ===> i
+s
+5 i 8 * 10 T 7 + 2 E 0  ===> 
+String is accepted.

@@ -1,0 +1,520 @@
+Grammar
+
+    0 $accept: Start $end
+
+    1 Start: S '\n'
+
+    2 S: IF '(' B ')' M S
+    3  | '{' L '}'
+    4  | A
+    5  | WHILE M '(' B ')' M S M
+    6  | IF '(' B ')' M S ELSE M S M
+
+    7 L: L M S
+    8  | S
+
+    9 A: E '='
+
+   10 B: B orr M B
+   11  | B andd M B
+   12  | nott B
+   13  | '(' B ')'
+   14  | E rel E
+
+   15 E: id
+
+   16 M: %empty
+
+
+Terminals, with rules where they appear
+
+$end (0) 0
+'\n' (10) 1
+'(' (40) 2 5 6 13
+')' (41) 2 5 6 13
+'=' (61) 9
+'{' (123) 3
+'}' (125) 3
+error (256)
+orr (258) 10
+andd (259) 11
+nott (260) 12
+IF (261) 2 6
+WHILE (262) 5
+ELSE (263) 6
+rel (264) 14
+id (265) 15
+
+
+Nonterminals, with rules where they appear
+
+$accept (17)
+    on left: 0
+Start (18)
+    on left: 1, on right: 0
+S (19)
+    on left: 2 3 4 5 6, on right: 1 2 5 6 7 8
+L (20)
+    on left: 7 8, on right: 3 7
+A (21)
+    on left: 9, on right: 4
+B (22)
+    on left: 10 11 12 13 14, on right: 2 5 6 10 11 12 13
+E (23)
+    on left: 15, on right: 9 14
+M (24)
+    on left: 16, on right: 2 5 6 7 10 11
+
+
+State 0
+
+    0 $accept: . Start $end
+
+    IF     shift, and go to state 1
+    WHILE  shift, and go to state 2
+    id     shift, and go to state 3
+    '{'    shift, and go to state 4
+
+    Start  go to state 5
+    S      go to state 6
+    A      go to state 7
+    E      go to state 8
+
+
+State 1
+
+    2 S: IF . '(' B ')' M S
+    6  | IF . '(' B ')' M S ELSE M S M
+
+    '('  shift, and go to state 9
+
+
+State 2
+
+    5 S: WHILE . M '(' B ')' M S M
+
+    $default  reduce using rule 16 (M)
+
+    M  go to state 10
+
+
+State 3
+
+   15 E: id .
+
+    $default  reduce using rule 15 (E)
+
+
+State 4
+
+    3 S: '{' . L '}'
+
+    IF     shift, and go to state 1
+    WHILE  shift, and go to state 2
+    id     shift, and go to state 3
+    '{'    shift, and go to state 4
+
+    S  go to state 11
+    L  go to state 12
+    A  go to state 7
+    E  go to state 8
+
+
+State 5
+
+    0 $accept: Start . $end
+
+    $end  shift, and go to state 13
+
+
+State 6
+
+    1 Start: S . '\n'
+
+    '\n'  shift, and go to state 14
+
+
+State 7
+
+    4 S: A .
+
+    $default  reduce using rule 4 (S)
+
+
+State 8
+
+    9 A: E . '='
+
+    '='  shift, and go to state 15
+
+
+State 9
+
+    2 S: IF '(' . B ')' M S
+    6  | IF '(' . B ')' M S ELSE M S M
+
+    nott  shift, and go to state 16
+    id    shift, and go to state 3
+    '('   shift, and go to state 17
+
+    B  go to state 18
+    E  go to state 19
+
+
+State 10
+
+    5 S: WHILE M . '(' B ')' M S M
+
+    '('  shift, and go to state 20
+
+
+State 11
+
+    8 L: S .
+
+    $default  reduce using rule 8 (L)
+
+
+State 12
+
+    3 S: '{' L . '}'
+    7 L: L . M S
+
+    '}'  shift, and go to state 21
+
+    $default  reduce using rule 16 (M)
+
+    M  go to state 22
+
+
+State 13
+
+    0 $accept: Start $end .
+
+    $default  accept
+
+
+State 14
+
+    1 Start: S '\n' .
+
+    $default  reduce using rule 1 (Start)
+
+
+State 15
+
+    9 A: E '=' .
+
+    $default  reduce using rule 9 (A)
+
+
+State 16
+
+   12 B: nott . B
+
+    nott  shift, and go to state 16
+    id    shift, and go to state 3
+    '('   shift, and go to state 17
+
+    B  go to state 23
+    E  go to state 19
+
+
+State 17
+
+   13 B: '(' . B ')'
+
+    nott  shift, and go to state 16
+    id    shift, and go to state 3
+    '('   shift, and go to state 17
+
+    B  go to state 24
+    E  go to state 19
+
+
+State 18
+
+    2 S: IF '(' B . ')' M S
+    6  | IF '(' B . ')' M S ELSE M S M
+   10 B: B . orr M B
+   11  | B . andd M B
+
+    orr   shift, and go to state 25
+    andd  shift, and go to state 26
+    ')'   shift, and go to state 27
+
+
+State 19
+
+   14 B: E . rel E
+
+    rel  shift, and go to state 28
+
+
+State 20
+
+    5 S: WHILE M '(' . B ')' M S M
+
+    nott  shift, and go to state 16
+    id    shift, and go to state 3
+    '('   shift, and go to state 17
+
+    B  go to state 29
+    E  go to state 19
+
+
+State 21
+
+    3 S: '{' L '}' .
+
+    $default  reduce using rule 3 (S)
+
+
+State 22
+
+    7 L: L M . S
+
+    IF     shift, and go to state 1
+    WHILE  shift, and go to state 2
+    id     shift, and go to state 3
+    '{'    shift, and go to state 4
+
+    S  go to state 30
+    A  go to state 7
+    E  go to state 8
+
+
+State 23
+
+   10 B: B . orr M B
+   11  | B . andd M B
+   12  | nott B .
+
+    $default  reduce using rule 12 (B)
+
+
+State 24
+
+   10 B: B . orr M B
+   11  | B . andd M B
+   13  | '(' B . ')'
+
+    orr   shift, and go to state 25
+    andd  shift, and go to state 26
+    ')'   shift, and go to state 31
+
+
+State 25
+
+   10 B: B orr . M B
+
+    $default  reduce using rule 16 (M)
+
+    M  go to state 32
+
+
+State 26
+
+   11 B: B andd . M B
+
+    $default  reduce using rule 16 (M)
+
+    M  go to state 33
+
+
+State 27
+
+    2 S: IF '(' B ')' . M S
+    6  | IF '(' B ')' . M S ELSE M S M
+
+    $default  reduce using rule 16 (M)
+
+    M  go to state 34
+
+
+State 28
+
+   14 B: E rel . E
+
+    id  shift, and go to state 3
+
+    E  go to state 35
+
+
+State 29
+
+    5 S: WHILE M '(' B . ')' M S M
+   10 B: B . orr M B
+   11  | B . andd M B
+
+    orr   shift, and go to state 25
+    andd  shift, and go to state 26
+    ')'   shift, and go to state 36
+
+
+State 30
+
+    7 L: L M S .
+
+    $default  reduce using rule 7 (L)
+
+
+State 31
+
+   13 B: '(' B ')' .
+
+    $default  reduce using rule 13 (B)
+
+
+State 32
+
+   10 B: B orr M . B
+
+    nott  shift, and go to state 16
+    id    shift, and go to state 3
+    '('   shift, and go to state 17
+
+    B  go to state 37
+    E  go to state 19
+
+
+State 33
+
+   11 B: B andd M . B
+
+    nott  shift, and go to state 16
+    id    shift, and go to state 3
+    '('   shift, and go to state 17
+
+    B  go to state 38
+    E  go to state 19
+
+
+State 34
+
+    2 S: IF '(' B ')' M . S
+    6  | IF '(' B ')' M . S ELSE M S M
+
+    IF     shift, and go to state 1
+    WHILE  shift, and go to state 2
+    id     shift, and go to state 3
+    '{'    shift, and go to state 4
+
+    S  go to state 39
+    A  go to state 7
+    E  go to state 8
+
+
+State 35
+
+   14 B: E rel E .
+
+    $default  reduce using rule 14 (B)
+
+
+State 36
+
+    5 S: WHILE M '(' B ')' . M S M
+
+    $default  reduce using rule 16 (M)
+
+    M  go to state 40
+
+
+State 37
+
+   10 B: B . orr M B
+   10  | B orr M B .
+   11  | B . andd M B
+
+    andd  shift, and go to state 26
+
+    $default  reduce using rule 10 (B)
+
+
+State 38
+
+   10 B: B . orr M B
+   11  | B . andd M B
+   11  | B andd M B .
+
+    $default  reduce using rule 11 (B)
+
+
+State 39
+
+    2 S: IF '(' B ')' M S .
+    6  | IF '(' B ')' M S . ELSE M S M
+
+    ELSE  shift, and go to state 41
+
+    $default  reduce using rule 2 (S)
+
+
+State 40
+
+    5 S: WHILE M '(' B ')' M . S M
+
+    IF     shift, and go to state 1
+    WHILE  shift, and go to state 2
+    id     shift, and go to state 3
+    '{'    shift, and go to state 4
+
+    S  go to state 42
+    A  go to state 7
+    E  go to state 8
+
+
+State 41
+
+    6 S: IF '(' B ')' M S ELSE . M S M
+
+    $default  reduce using rule 16 (M)
+
+    M  go to state 43
+
+
+State 42
+
+    5 S: WHILE M '(' B ')' M S . M
+
+    $default  reduce using rule 16 (M)
+
+    M  go to state 44
+
+
+State 43
+
+    6 S: IF '(' B ')' M S ELSE M . S M
+
+    IF     shift, and go to state 1
+    WHILE  shift, and go to state 2
+    id     shift, and go to state 3
+    '{'    shift, and go to state 4
+
+    S  go to state 45
+    A  go to state 7
+    E  go to state 8
+
+
+State 44
+
+    5 S: WHILE M '(' B ')' M S M .
+
+    $default  reduce using rule 5 (S)
+
+
+State 45
+
+    6 S: IF '(' B ')' M S ELSE M S . M
+
+    $default  reduce using rule 16 (M)
+
+    M  go to state 46
+
+
+State 46
+
+    6 S: IF '(' B ')' M S ELSE M S M .
+
+    $default  reduce using rule 6 (S)

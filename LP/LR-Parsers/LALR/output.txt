@@ -1,0 +1,285 @@
+E -> EE+ | 
+E -> EE- | 
+E -> a | 
+initialising first
+The First is as follows: 
+calculating first of: E
+case 3
+calculating first of: E
+case 3
+calculating first of: E
+E --> a a a 
+Displaying augmentd grammar
+Y -> E | 
+E -> EE+ | 
+E -> EE- | 
+E -> a | 
+All symbols
++ - E a 
+Y -> .E | $ / 
+ret: 1
+Y -> .E | $ / 
+Y -> .E | $ / 
+E -> .EE+ | $ / 
+E -> .EE- | $ / 
+E -> .a | $ / 
+
+
+state 0 closure grammr
+Y -> .E | $ / 
+E -> .EE+ | $ / 
+E -> .EE- | $ / 
+E -> .a | $ / 
+goTo: 0 , +
+displaying goto grammar: 
+goTo: 0 , -
+displaying goto grammar: 
+goTo: 0 , E
+advance dot: str .E
+advance dot: ret E.
+found: E.
+advance dot: str .EE+
+advance dot: ret E.E+
+found: E.E+
+advance dot: str .EE-
+advance dot: ret E.E-
+found: E.E-
+Y -> E. | $ / 
+E -> E.E+ | $ / 
+E -> E.E- | $ / 
+displaying goto grammar: 
+Y -> E. | $ / 
+E -> E.E+ | $ / 
+E -> E.E- | $ / 
+
+ret: 1
+Y -> E. | $ / 
+E -> E.E+ | $ / 
+
+Y -> E. | $ / 
+E -> E.E+ | $ / 
+E -> .EE+ | a / a / a / 
+E -> .EE- | a / a / a / 
+E -> .a | a / a / a / 
+E -> E.E- | $ / 
+
+
+
+
+Y -> E. | $ / 
+E -> E.E+ | $ / 
+E -> .EE+ | a / a / a / 
+E -> .EE- | a / a / a / 
+E -> .a | a / a / a / 
+E -> E.E- | $ / 
+goTo: 0 , a
+advance dot: str .a
+advance dot: ret a.
+found: a.
+E -> a. | $ / 
+displaying goto grammar: 
+E -> a. | $ / 
+E -> a. | $ / 
+goTo: 1 , +
+displaying goto grammar: 
+goTo: 1 , -
+displaying goto grammar: 
+goTo: 1 , E
+advance dot: str E.E+
+advance dot: ret EE.+
+found: EE.+
+advance dot: str .EE+
+advance dot: ret E.E+
+found: E.E+
+advance dot: str .EE-
+advance dot: ret E.E-
+found: E.E-
+advance dot: str E.E-
+advance dot: ret EE.-
+found: EE.-
+E -> EE.+ | $ / 
+E -> E.E+ | a / a / a / 
+E -> E.E- | a / a / a / 
+E -> EE.- | $ / 
+displaying goto grammar: 
+E -> EE.+ | $ / 
+E -> E.E+ | a / a / a / 
+E -> E.E- | a / a / a / 
+E -> EE.- | $ / 
+
+ret: 1
+E -> EE.+ | $ / 
+E -> E.E+ | a / a / a / 
+
+E -> EE.+ | $ / 
+E -> E.E+ | a / a / a / 
+E -> .EE+ | a / a / a / 
+E -> .EE- | a / a / a / 
+E -> .a | a / a / a / 
+E -> E.E- | a / a / a / 
+E -> EE.- | $ / 
+
+
+
+
+E -> EE.+ | $ / 
+E -> E.E+ | a / a / a / 
+E -> .EE+ | a / a / a / 
+E -> .EE- | a / a / a / 
+E -> .a | a / a / a / 
+E -> E.E- | a / a / a / 
+E -> EE.- | $ / 
+goTo: 1 , a
+advance dot: str .a
+advance dot: ret a.
+found: a.
+E -> a. | a / a / a / 
+displaying goto grammar: 
+E -> a. | a / a / a / 
+E -> a. | a / a / a / 
+goTo: 2 , +
+displaying goto grammar: 
+goTo: 2 , -
+displaying goto grammar: 
+goTo: 2 , E
+displaying goto grammar: 
+goTo: 2 , a
+displaying goto grammar: 
+goTo: 3 , +
+advance dot: str EE.+
+advance dot: ret EE+.
+found: EE+.
+E -> EE+. | $ / 
+displaying goto grammar: 
+E -> EE+. | $ / 
+E -> EE+. | $ / 
+goTo: 3 , -
+advance dot: str EE.-
+advance dot: ret EE-.
+found: EE-.
+E -> EE-. | $ / 
+displaying goto grammar: 
+E -> EE-. | $ / 
+E -> EE-. | $ / 
+goTo: 3 , E
+advance dot: str E.E+
+advance dot: ret EE.+
+found: EE.+
+advance dot: str .EE+
+advance dot: ret E.E+
+found: E.E+
+advance dot: str .EE-
+advance dot: ret E.E-
+found: E.E-
+advance dot: str E.E-
+advance dot: ret EE.-
+found: EE.-
+E -> EE.+ | a / a / a / 
+E -> E.E+ | a / a / a / 
+E -> E.E- | a / a / a / 
+E -> EE.- | a / a / a / 
+displaying goto grammar: 
+E -> EE.+ | a / a / a / 
+E -> E.E+ | a / a / a / 
+E -> E.E- | a / a / a / 
+E -> EE.- | a / a / a / 
+
+ret: 1
+E -> EE.+ | a / a / a / 
+E -> E.E+ | a / a / a / 
+
+E -> EE.+ | a / a / a / 
+E -> E.E+ | a / a / a / 
+E -> .EE+ | a / a / a / 
+E -> .EE- | a / a / a / 
+E -> .a | a / a / a / 
+E -> E.E- | a / a / a / 
+E -> EE.- | a / a / a / 
+
+
+
+
+E -> EE.+ | a / a / a / 
+E -> E.E+ | a / a / a / 
+E -> .EE+ | a / a / a / 
+E -> .EE- | a / a / a / 
+E -> .a | a / a / a / 
+E -> E.E- | a / a / a / 
+E -> EE.- | a / a / a / 
+goTo: 3 , a
+advance dot: str .a
+advance dot: ret a.
+found: a.
+E -> a. | a / a / a / a / a / a / 
+displaying goto grammar: 
+E -> a. | a / a / a / a / a / a / 
+E -> a. | a / a / a / a / a / a / 
+goTo: 2 , +
+displaying goto grammar: 
+goTo: 2 , -
+displaying goto grammar: 
+goTo: 2 , E
+displaying goto grammar: 
+goTo: 2 , a
+displaying goto grammar: 
+goTo: 4 , +
+displaying goto grammar: 
+goTo: 4 , -
+displaying goto grammar: 
+goTo: 4 , E
+displaying goto grammar: 
+goTo: 4 , a
+displaying goto grammar: 
+goTo: 5 , +
+displaying goto grammar: 
+goTo: 5 , -
+displaying goto grammar: 
+goTo: 5 , E
+displaying goto grammar: 
+goTo: 5 , a
+displaying goto grammar: 
+Displaying the LR state Automation: 
+state: 0
+Y -> .E | $ / 
+E -> .EE+ | $ / 
+E -> .EE- | $ / 
+E -> .a | $ / 
+Goto: E ==> 1
+Goto: a ==> 2
+state: 1
+Y -> E. | $ / 
+E -> E.E+ | $ / 
+E -> .EE+ | a / a / a / 
+E -> .EE- | a / a / a / 
+E -> .a | a / a / a / 
+E -> E.E- | $ / 
+Goto: E ==> 3
+Goto: a ==> 2
+state: 2
+E -> a. | $ / a / a / a / a / a / a / a / a / a / 
+state: 3
+E -> EE.+ | $ / a / a / a / 
+E -> E.E+ | a / a / a / a / a / a / 
+E -> .EE+ | a / a / a / a / a / a / 
+E -> .EE- | a / a / a / a / a / a / 
+E -> .a | a / a / a / a / a / a / 
+E -> E.E- | a / a / a / a / a / a / 
+E -> EE.- | $ / a / a / a / 
+Goto: + ==> 4
+Goto: - ==> 5
+Goto: E ==> 3
+Goto: a ==> 2
+state: 4
+E -> EE+. | $ / 
+state: 5
+E -> EE-. | $ / 
+
+The SLR-table for the graamar is: 
+0 [E,1]  [a,s2]  
+1 [E,3]  [a,s2]  
+2 [$,r3]  [a,r3]  [a,r3]  [a,r3]  [a,r3]  [a,r3]  [a,r3]  [a,r3]  [a,r3]  [a,r3]  
+3 [+,s4]  [-,s5]  [E,3]  [a,s2]  
+4 [$,r1]  
+5 [$,r2]  
+string to check: 3
+No. This string does not belong to the language derived from the grammar.

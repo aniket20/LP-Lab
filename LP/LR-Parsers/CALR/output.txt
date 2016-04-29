@@ -1,0 +1,323 @@
+S -> CC | 
+C -> cC | 
+C -> d | 
+initialising first
+The First is as follows: 
+calculating first of: C
+C --> d c 
+calculating first of: S
+case 3
+calculating first of: C
+S --> c d 
+Displaying augmentd grammar
+Y -> S | 
+S -> CC | 
+C -> cC | 
+C -> d | 
+All symbols
+C S c d 
+Y -> .S | $ / 
+ret: 1
+Y -> .S | $ / 
+Y -> .S | $ / 
+S -> .CC | $ / 
+
+ret: 1
+Y -> .S | $ / 
+S -> .CC | $ / 
+Y -> .S | $ / 
+S -> .CC | $ / 
+C -> .cC | d / c / 
+C -> .d | d / c / 
+
+
+state 0 closure grammr
+Y -> .S | $ / 
+S -> .CC | $ / 
+C -> .cC | d / c / 
+C -> .d | d / c / 
+goTo: 0 , C
+advance dot: str .CC
+advance dot: ret C.C
+found: C.C
+S -> C.C | $ / 
+displaying goto grammar: 
+S -> C.C | $ / 
+ret: 1
+S -> C.C | $ / 
+S -> C.C | $ / 
+C -> .cC | $ / 
+C -> .d | $ / 
+
+S -> C.C | $ / 
+C -> .cC | $ / 
+C -> .d | $ / 
+goTo: 0 , S
+advance dot: str .S
+advance dot: ret S.
+found: S.
+Y -> S. | $ / 
+displaying goto grammar: 
+Y -> S. | $ / 
+Y -> S. | $ / 
+goTo: 0 , c
+advance dot: str .cC
+advance dot: ret c.C
+found: c.C
+C -> c.C | d / c / 
+displaying goto grammar: 
+C -> c.C | d / c / 
+ret: 1
+C -> c.C | d / c / 
+C -> c.C | d / c / 
+C -> .cC | d / c / 
+C -> .d | d / c / 
+
+C -> c.C | d / c / 
+C -> .cC | d / c / 
+C -> .d | d / c / 
+goTo: 0 , d
+advance dot: str .d
+advance dot: ret d.
+found: d.
+C -> d. | d / c / 
+displaying goto grammar: 
+C -> d. | d / c / 
+C -> d. | d / c / 
+goTo: 1 , C
+advance dot: str C.C
+advance dot: ret CC.
+found: CC.
+S -> CC. | $ / 
+displaying goto grammar: 
+S -> CC. | $ / 
+S -> CC. | $ / 
+goTo: 1 , S
+displaying goto grammar: 
+goTo: 1 , c
+advance dot: str .cC
+advance dot: ret c.C
+found: c.C
+C -> c.C | $ / 
+displaying goto grammar: 
+C -> c.C | $ / 
+ret: 1
+C -> c.C | $ / 
+C -> c.C | $ / 
+C -> .cC | $ / 
+C -> .d | $ / 
+
+C -> c.C | $ / 
+C -> .cC | $ / 
+C -> .d | $ / 
+goTo: 1 , d
+advance dot: str .d
+advance dot: ret d.
+found: d.
+C -> d. | $ / 
+displaying goto grammar: 
+C -> d. | $ / 
+C -> d. | $ / 
+goTo: 2 , C
+displaying goto grammar: 
+goTo: 2 , S
+displaying goto grammar: 
+goTo: 2 , c
+displaying goto grammar: 
+goTo: 2 , d
+displaying goto grammar: 
+goTo: 3 , C
+advance dot: str c.C
+advance dot: ret cC.
+found: cC.
+C -> cC. | d / c / 
+displaying goto grammar: 
+C -> cC. | d / c / 
+C -> cC. | d / c / 
+goTo: 3 , S
+displaying goto grammar: 
+goTo: 3 , c
+advance dot: str .cC
+advance dot: ret c.C
+found: c.C
+C -> c.C | d / c / 
+displaying goto grammar: 
+C -> c.C | d / c / 
+ret: 1
+C -> c.C | d / c / 
+C -> c.C | d / c / 
+C -> .cC | d / c / 
+C -> .d | d / c / 
+
+C -> c.C | d / c / 
+C -> .cC | d / c / 
+C -> .d | d / c / 
+goTo: 3 , d
+advance dot: str .d
+advance dot: ret d.
+found: d.
+C -> d. | d / c / 
+displaying goto grammar: 
+C -> d. | d / c / 
+C -> d. | d / c / 
+goTo: 4 , C
+displaying goto grammar: 
+goTo: 4 , S
+displaying goto grammar: 
+goTo: 4 , c
+displaying goto grammar: 
+goTo: 4 , d
+displaying goto grammar: 
+goTo: 5 , C
+displaying goto grammar: 
+goTo: 5 , S
+displaying goto grammar: 
+goTo: 5 , c
+displaying goto grammar: 
+goTo: 5 , d
+displaying goto grammar: 
+goTo: 6 , C
+advance dot: str c.C
+advance dot: ret cC.
+found: cC.
+C -> cC. | $ / 
+displaying goto grammar: 
+C -> cC. | $ / 
+C -> cC. | $ / 
+goTo: 6 , S
+displaying goto grammar: 
+goTo: 6 , c
+advance dot: str .cC
+advance dot: ret c.C
+found: c.C
+C -> c.C | $ / 
+displaying goto grammar: 
+C -> c.C | $ / 
+ret: 1
+C -> c.C | $ / 
+C -> c.C | $ / 
+C -> .cC | $ / 
+C -> .d | $ / 
+
+C -> c.C | $ / 
+C -> .cC | $ / 
+C -> .d | $ / 
+goTo: 6 , d
+advance dot: str .d
+advance dot: ret d.
+found: d.
+C -> d. | $ / 
+displaying goto grammar: 
+C -> d. | $ / 
+C -> d. | $ / 
+goTo: 7 , C
+displaying goto grammar: 
+goTo: 7 , S
+displaying goto grammar: 
+goTo: 7 , c
+displaying goto grammar: 
+goTo: 7 , d
+displaying goto grammar: 
+goTo: 8 , C
+displaying goto grammar: 
+goTo: 8 , S
+displaying goto grammar: 
+goTo: 8 , c
+displaying goto grammar: 
+goTo: 8 , d
+displaying goto grammar: 
+goTo: 4 , C
+displaying goto grammar: 
+goTo: 4 , S
+displaying goto grammar: 
+goTo: 4 , c
+displaying goto grammar: 
+goTo: 4 , d
+displaying goto grammar: 
+goTo: 9 , C
+displaying goto grammar: 
+goTo: 9 , S
+displaying goto grammar: 
+goTo: 9 , c
+displaying goto grammar: 
+goTo: 9 , d
+displaying goto grammar: 
+goTo: 7 , C
+displaying goto grammar: 
+goTo: 7 , S
+displaying goto grammar: 
+goTo: 7 , c
+displaying goto grammar: 
+goTo: 7 , d
+displaying goto grammar: 
+Displaying the LR state Automation: 
+state: 0
+Y -> .S | $ / 
+S -> .CC | $ / 
+C -> .cC | d / c / 
+C -> .d | d / c / 
+Goto: C ==> 1
+Goto: S ==> 2
+Goto: c ==> 3
+Goto: d ==> 4
+state: 1
+S -> C.C | $ / 
+C -> .cC | $ / 
+C -> .d | $ / 
+Goto: C ==> 5
+Goto: c ==> 6
+Goto: d ==> 7
+state: 2
+Y -> S. | $ / 
+state: 3
+C -> c.C | d / c / 
+C -> .cC | d / c / 
+C -> .d | d / c / 
+Goto: C ==> 8
+Goto: c ==> 3
+Goto: d ==> 4
+state: 4
+C -> d. | d / c / 
+state: 5
+S -> CC. | $ / 
+state: 6
+C -> c.C | $ / 
+C -> .cC | $ / 
+C -> .d | $ / 
+Goto: C ==> 9
+Goto: c ==> 6
+Goto: d ==> 7
+state: 7
+C -> d. | $ / 
+state: 8
+C -> cC. | d / c / 
+state: 9
+C -> cC. | $ / 
+
+The SLR-table for the graamar is: 
+0 [C,1]  [S,2]  [c,s3]  [d,s4]  
+1 [C,5]  [c,s6]  [d,s7]  
+2 
+3 [C,8]  [c,s3]  [d,s4]  
+4 [d,r3]  [c,r3]  
+5 [$,r1]  
+6 [C,9]  [c,s6]  [d,s7]  
+7 [$,r3]  
+8 [d,r2]  [c,r2]  
+9 [$,r2]  
+string to check: ccddd
+s
+3 c 0  ===> cddd
+s
+3 c 3 c 0  ===> ddd
+s
+4 d 3 c 3 c 0  ===> dd
+r
+8 C 3 c 3 c 0  ===> dd
+r
+8 C 3 c 0  ===> dd
+r
+1 C 0  ===> dd
+s
+7 d 1 C 0  ===> d
+No. This string does not belong to the language derived from the grammar.
